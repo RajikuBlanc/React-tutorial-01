@@ -1,9 +1,17 @@
-import logo from "./logo.svg";
-import "./App.scss";
+import React from "react";
+import NavMemu from "./components/NavMenu";
+import { BrowserRouter as Router } from "react-router-dom";
 
-function App() {
-  <img src={logo} alt="" />;
-  return <h2>Hello React!</h2>;
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Router>
+          <NavMemu />
+        </Router>
+      </>
+    );
+  }
 }
 
 export default App;
