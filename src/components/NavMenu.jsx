@@ -31,18 +31,53 @@ const NavMenu = () => {
         </div>
 
         <li>
-          <NavLink to="/" exact>
+          <NavLink
+            to="/"
+            exact
+            className="closeNavIcon"
+            onClick={() => setShowNav(!showNav)}
+            role="button"
+            onKeyDown={() => setShowNav(!showNav)}
+            tabIndex={0}
+          >
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about">About</NavLink>
+          <NavLink
+            to="/about"
+            className="closeNavIcon"
+            onClick={() => setShowNav(!showNav)}
+            role="button"
+            onKeyDown={() => setShowNav(!showNav)}
+            tabIndex={0}
+          >
+            About
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/projects">Projects</NavLink>
+          <NavLink
+            to="/projects"
+            className="closeNavIcon"
+            onClick={() => setShowNav(!showNav)}
+            role="button"
+            onKeyDown={() => setShowNav(!showNav)}
+            tabIndex={0}
+          >
+            Projects
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink
+            to="/contact"
+            className="closeNavIcon"
+            onClick={() => setShowNav(!showNav)}
+            role="button"
+            onKeyDown={() => setShowNav(!showNav)}
+            tabIndex={0}
+          >
+            Contact
+          </NavLink>
         </li>
       </ul>
     </NavMenuStyles>
@@ -94,8 +129,12 @@ const NavMenuStyles = styled.div`
     width: 40px;
     cursor: pointer;
     outline: none;
+    * {
+      pointer-events: none;
+    }
   }
   @media only screen and (max-width: 768px) {
+    padding: 0;
     .hide-navItems {
       transform: translateY(calc(-100% - var(--top)));
     }
