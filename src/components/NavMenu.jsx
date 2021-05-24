@@ -3,8 +3,9 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { MdMenu, MdClose } from "react-icons/md";
 
-const NavMenu = () => {
+export default function NavMenu() {
   const [showNav, setShowNav] = useState(false);
+
   return (
     <NavMenuStyles>
       {/* Humberger Menu */}
@@ -34,7 +35,6 @@ const NavMenu = () => {
           <NavLink
             to="/"
             exact
-            className="closeNavIcon"
             onClick={() => setShowNav(!showNav)}
             role="button"
             onKeyDown={() => setShowNav(!showNav)}
@@ -46,7 +46,6 @@ const NavMenu = () => {
         <li>
           <NavLink
             to="/about"
-            className="closeNavIcon"
             onClick={() => setShowNav(!showNav)}
             role="button"
             onKeyDown={() => setShowNav(!showNav)}
@@ -58,7 +57,6 @@ const NavMenu = () => {
         <li>
           <NavLink
             to="/projects"
-            className="closeNavIcon"
             onClick={() => setShowNav(!showNav)}
             role="button"
             onKeyDown={() => setShowNav(!showNav)}
@@ -70,7 +68,6 @@ const NavMenu = () => {
         <li>
           <NavLink
             to="/contact"
-            className="closeNavIcon"
             onClick={() => setShowNav(!showNav)}
             role="button"
             onKeyDown={() => setShowNav(!showNav)}
@@ -82,7 +79,7 @@ const NavMenu = () => {
       </ul>
     </NavMenuStyles>
   );
-};
+}
 
 // Styles
 const NavMenuStyles = styled.div`
@@ -168,5 +165,3 @@ const NavMenuStyles = styled.div`
     }
   }
 `;
-
-export default NavMenu;
