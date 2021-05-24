@@ -1,12 +1,55 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import { MdMenu } from "react-icons/md";
+import { MdClose } from "react-icons/md";
+
+const NavMenuStyles = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background: var(--dark-bg);
+  ul {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    li {
+      display: inline-block;
+      border-radius: 8px;
+      transition: 0.3s ease background-color;
+      &:hover {
+        background-color: var(--deep-dark);
+      }
+    }
+    a {
+      font-family: "RobotoMono Regular";
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      color: var(--gray-1);
+      outline: none;
+    }
+    .active {
+      color: var(--white);
+    }
+  }
+`;
 
 const NavMenu = () => {
   return (
-    <div>
+    <NavMenuStyles>
+      <div className="mobile-menu-icon">
+        <MdMenu />
+      </div>
       <ul>
+        <MdClose />
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/" exact>
+            Home
+          </NavLink>
         </li>
         <li>
           <NavLink to="/about">About</NavLink>
@@ -18,7 +61,7 @@ const NavMenu = () => {
           <NavLink to="/contact">Contact</NavLink>
         </li>
       </ul>
-    </div>
+    </NavMenuStyles>
   );
 };
 
