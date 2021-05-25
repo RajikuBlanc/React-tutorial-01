@@ -3,89 +3,12 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { MdMenu, MdClose } from "react-icons/md";
 
-export default function NavMenu() {
-  const [showNav, setShowNav] = useState(false);
-
-  return (
-    <NavMenuStyles>
-      {/* Humberger Menu */}
-      <div
-        className="mobile-menu-icon"
-        onClick={() => setShowNav(!showNav)}
-        role="button"
-        onKeyDown={() => setShowNav(!showNav)}
-        tabIndex={0}
-      >
-        <MdMenu />
-      </div>
-
-      <ul className={!showNav ? "navItems hide-navItems" : "navItems"}>
-        {/* Close Button */}
-        <div
-          className="closeNavIcon"
-          onClick={() => setShowNav(!showNav)}
-          role="button"
-          onKeyDown={() => setShowNav(!showNav)}
-          tabIndex={0}
-        >
-          <MdClose />
-        </div>
-
-        <li>
-          <NavLink
-            to="/"
-            exact
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => setShowNav(!showNav)}
-            tabIndex={0}
-          >
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/about"
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => setShowNav(!showNav)}
-            tabIndex={0}
-          >
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/projects"
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => setShowNav(!showNav)}
-            tabIndex={0}
-          >
-            Projects
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/contact"
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => setShowNav(!showNav)}
-            tabIndex={0}
-          >
-            Contact
-          </NavLink>
-        </li>
-      </ul>
-    </NavMenuStyles>
-  );
-}
-
 // Styles
 const NavMenuStyles = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 999;
   width: 100%;
   padding: 1rem 0;
   background: var(--dark-bg);
@@ -165,3 +88,81 @@ const NavMenuStyles = styled.div`
     }
   }
 `;
+
+export default function NavMenu() {
+  const [showNav, setShowNav] = useState(false);
+
+  return (
+    <NavMenuStyles>
+      {/* Humberger Menu */}
+      <div
+        className="mobile-menu-icon"
+        onClick={() => setShowNav(!showNav)}
+        role="button"
+        onKeyDown={() => setShowNav(!showNav)}
+        tabIndex={0}
+      >
+        <MdMenu />
+      </div>
+
+      <ul className={!showNav ? "navItems hide-navItems" : "navItems"}>
+        {/* Close Button */}
+        <div
+          className="closeNavIcon"
+          onClick={() => setShowNav(!showNav)}
+          role="button"
+          onKeyDown={() => setShowNav(!showNav)}
+          tabIndex={0}
+        >
+          <MdClose />
+        </div>
+
+        <li>
+          <NavLink
+            to="/"
+            exact
+            onClick={() => setShowNav(!showNav)}
+            role="button"
+            onKeyDown={() => setShowNav(!showNav)}
+            tabIndex={0}
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/about"
+            onClick={() => setShowNav(!showNav)}
+            role="button"
+            onKeyDown={() => setShowNav(!showNav)}
+            tabIndex={0}
+          >
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/projects"
+            onClick={() => setShowNav(!showNav)}
+            role="button"
+            onKeyDown={() => setShowNav(!showNav)}
+            tabIndex={0}
+          >
+            Projects
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/contact"
+            onClick={() => setShowNav(!showNav)}
+            role="button"
+            onKeyDown={() => setShowNav(!showNav)}
+            tabIndex={0}
+          >
+            Contact
+          </NavLink>
+        </li>
+      </ul>
+    </NavMenuStyles>
+  );
+}
