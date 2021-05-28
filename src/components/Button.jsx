@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Medias } from "../styles/Media";
 
 export default function Button({ outline = false, btnLink = "link", btnText = "Text" }) {
   return (
@@ -14,6 +15,7 @@ export default function Button({ outline = false, btnLink = "link", btnText = "T
 
 const ButtonStyle = styled.div`
   margin-top: 2rem;
+  width: 100%;
   .button {
     display: inline-block;
     padding: 1rem 2rem;
@@ -23,7 +25,7 @@ const ButtonStyle = styled.div`
     border: 1px solid var(--gray-1);
     color: ${props => (props.outline ? "var(--gray-1)" : "#000")};
   }
-  @media only screen and (max-width: 768px) {
+  ${Medias.tab} {
     .button {
       font-size: 1.8rem;
     }

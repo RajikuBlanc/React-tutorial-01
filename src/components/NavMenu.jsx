@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { MdMenu, MdClose } from "react-icons/md";
+import { Medias } from "../styles/Media";
 
 // Styles
 const NavMenuStyles = styled.div`
@@ -53,7 +54,7 @@ const NavMenuStyles = styled.div`
       pointer-events: none;
     }
   }
-  @media only screen and (max-width: 768px) {
+  ${Medias.tab} {
     padding: 0;
     .hide-navItems {
       transform: translateY(calc(-100% - var(--top)));

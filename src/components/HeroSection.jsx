@@ -7,6 +7,7 @@ import scrollDownArrow from "../assets/images/scroll-down-arrow.svg";
 import styled from "styled-components";
 import { FaFacebookF } from "react-icons/fa";
 import { AiOutlineTwitter, AiFillLinkedin, AiOutlineInstagram } from "react-icons/ai";
+import { Medias } from "../styles/Media";
 
 const HeroStyles = styled.div`
   .hero {
@@ -91,7 +92,7 @@ const HeroStyles = styled.div`
       }
     }
   }
-  @media only screen and (max-width: 768px) {
+  ${Medias.tab} {
     .hero {
       min-height: 750px;
     }
