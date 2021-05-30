@@ -1,18 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Medias } from "../styles/Media";
-
-class PText extends Component {
-  render() {
-    return (
-      <PStyle className="ptext">
-        <p>{this.props.text}</p>
-      </PStyle>
-    );
-  }
-}
-
-export default PText;
+import React from 'react'
+import styled from 'styled-components'
+import { Medias } from '../styles/Media'
 
 const PStyle = styled.div`
   max-width: 500px;
@@ -22,4 +10,12 @@ const PStyle = styled.div`
   ${Medias.tab} {
     font-size: 1.4rem;
   }
-`;
+`
+
+export default function PText({ children }) {
+  return (
+    <PStyle className="ptext">
+      <p>{children}</p>
+    </PStyle>
+  )
+}

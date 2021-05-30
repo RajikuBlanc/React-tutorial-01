@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import HeroImg from "../assets/images/hero.png";
-import PText from "./PText";
-import Button from "./Button";
-import socialMediaArrow from "../assets/images/social-media-arrow.svg";
-import scrollDownArrow from "../assets/images/scroll-down-arrow.svg";
-import styled from "styled-components";
-import { FaFacebookF } from "react-icons/fa";
-import { AiOutlineTwitter, AiFillLinkedin, AiOutlineInstagram } from "react-icons/ai";
-import { Medias } from "../styles/Media";
+import React, { Component } from 'react'
+import HeroImg from '../assets/images/hero.png'
+import PText from './PText'
+import Button from './Button'
+import socialMediaArrow from '../assets/images/social-media-arrow.svg'
+import scrollDownArrow from '../assets/images/scroll-down-arrow.svg'
+import styled from 'styled-components'
+import { FaFacebookF } from 'react-icons/fa'
+import { AiOutlineTwitter, AiFillLinkedin, AiOutlineInstagram } from 'react-icons/ai'
+import { Medias } from '../styles/Media'
 
 const HeroStyles = styled.div`
   .hero {
@@ -31,7 +31,7 @@ const HeroStyles = styled.div`
   }
   .hero__name {
     font-size: 7rem;
-    font-family: "Montserrat SemiBold";
+    font-family: 'Montserrat SemiBold';
     color: var(--white);
   }
   .hero__img {
@@ -143,7 +143,7 @@ const HeroStyles = styled.div`
       }
     }
   }
-`;
+`
 
 export default class HeroSection extends Component {
   render() {
@@ -159,11 +159,10 @@ export default class HeroSection extends Component {
               <img src={HeroImg} alt="" />
             </div>
             <div className="hero__info">
-              <PText
-                text="I am working as a freelance web designer and developer for 4
-              years. I love to design and make new web experiences for the
-              people."
-              />
+              <PText>
+                I am working as a freelance web designer and developer for 4 years. I love to design and make new web
+                experiences for the people.
+              </PText>
               <Button btnLink="/projects" btnText="see my works" />
             </div>
             <div className="hero__social">
@@ -203,6 +202,6 @@ export default class HeroSection extends Component {
           </div>
         </div>
       </HeroStyles>
-    );
+    )
   }
 }

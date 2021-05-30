@@ -1,10 +1,10 @@
-import React from "react";
-import SectionTitle from "./SectionTitle";
-import PText from "./PText";
-import Button from "./Button";
-import AboutImg from "../assets/images/about-sec-img.png";
-import styled from "styled-components";
-import { Medias } from "../styles/Media";
+import React from 'react'
+import SectionTitle from './SectionTitle'
+import PText from './PText'
+import Button from './Button'
+import AboutImg from '../assets/images/about-sec-img.png'
+import styled from 'styled-components'
+import { Medias } from '../styles/Media'
 
 const AboutSectionStyle = styled.div`
   padding: 10rem 0;
@@ -74,7 +74,7 @@ const AboutSectionStyle = styled.div`
       margin-top: 2rem;
     }
   }
-`;
+`
 
 export default function AboutSection() {
   return (
@@ -83,7 +83,10 @@ export default function AboutSection() {
         <div className="aboutSection__left">
           <SectionTitle subTitle="Let me introduce myself" Title="about me" />
 
-          <PText text="I am a freelance website designer and developer from Chittagong, Bangladesh. I create professional websites. I love art and always try to show unique views to the audience through my design." />
+          <PText>
+            I am a freelance website designer and developer from Chittagong, Bangladesh. I create professional websites.
+            I love art and always try to show unique views to the audience through my design.
+          </PText>
 
           <div className="aboutSection__buttons">
             <Button className="buttonWrapper" btnLink="/projects" btnText="Works" />
@@ -96,5 +99,5 @@ export default function AboutSection() {
         </div>
       </div>
     </AboutSectionStyle>
-  );
+  )
 }
