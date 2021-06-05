@@ -8,7 +8,6 @@ import SwiperCore, { Navigation, Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import { Medias } from '../styles/Media';
 
-
 SwiperCore.use([Navigation, Autoplay]);
 
 const ProjectSectionStyle = styled.div`
@@ -44,8 +43,8 @@ const ProjectSectionStyle = styled.div`
   .swiper-button-next::after {
     font-size: 2rem;
   }
-  ${Medias.custom(640)}{
-    .projects__list{
+  ${Medias.custom(640)} {
+    .projects__list {
       flex-direction: column;
       max-width: 400px;
       margin: 0 auto;
@@ -85,7 +84,7 @@ export default function ProjectSection() {
               if (index >= 5) return;
               return (
                 <SwiperSlide key={project.id}>
-                  <ProjectItem />
+                  <ProjectItem img={project.img} title={project.name} desc={project.desc} />
                 </SwiperSlide>
               );
             })}
