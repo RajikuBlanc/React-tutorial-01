@@ -60,6 +60,7 @@ export default function Projects() {
       setProjectsData(ProjectInfo);
     }
   };
+
   return (
     <ProjectsStyle>
       <div className="container">
