@@ -46,12 +46,15 @@ const ProjectsStyle = styled.div`
 
 export default function Projects() {
   const [searchText, setSearchText] = useState('');
-  const [projectData, setProjectsData] = useState(ProjectInfo);
+
+  const [projectsData, setProjectsData] = useState(ProjectInfo);
+
 
   useEffect(() => {
     if (searchText === '') return;
     setProjectsData(() => ProjectInfo.filter(item => item.name.toLowerCase().match(searchText.toLowerCase())));
   }, [searchText]);
+
 
   const handleChange = e => {
     e.preventDefault();
@@ -60,6 +63,7 @@ export default function Projects() {
       setProjectsData(ProjectInfo);
     }
   };
+
 
   return (
     <ProjectsStyle>
@@ -72,7 +76,7 @@ export default function Projects() {
           </form>
         </div>
         <div className="projects__list">
-          {projectData.map(item => (
+          {projectsData.map(item => (
             <ProjectItem img={item.img} title={item.name} desc={item.desc} key={item.id} />
           ))}
         </div>
