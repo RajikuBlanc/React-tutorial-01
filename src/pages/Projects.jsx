@@ -5,6 +5,7 @@ import { MdSearch } from 'react-icons/md';
 import ProjectItem from '../components/ProjectItem';
 import ProjectInfo from '../assets/data/projects';
 import { Medias } from '../styles/Media';
+
 const ProjectsStyle = styled.div`
   padding: 10rem 0;
   .projects__list {
@@ -45,17 +46,24 @@ const ProjectsStyle = styled.div`
 
 export default function Projects() {
   const [searchText, setSearchText] = useState('');
+
   const [projectsData, setProjectsData] = useState(ProjectInfo);
+
 
   useEffect(() => {
     if (searchText === '') return;
     setProjectsData(() => ProjectInfo.filter(item => item.name.toLowerCase().match(searchText.toLowerCase())));
   }, [searchText]);
 
-  function handleChange(e) {
+
+  const handleChange = e => {
     e.preventDefault();
     setSearchText(e.target.value);
-  }
+    if (!e.target.value.length > 0) {
+      setProjectsData(ProjectInfo);
+    }
+  };
+
 
   return (
     <ProjectsStyle>
@@ -68,7 +76,7 @@ export default function Projects() {
           </form>
         </div>
         <div className="projects__list">
-          {ProjectInfo.map(item => (
+          {projectsData.map(item => (
             <ProjectItem img={item.img} title={item.name} desc={item.desc} key={item.id} />
           ))}
         </div>
